@@ -1,0 +1,6 @@
+description = ""
+requires = "fmt"
+archive(byte) = "monkey.cma"
+archive(native) = "monkey.cmxa"
+plugin(byte) = "monkey.cma"
+plugin(native) = "monkey.cmxs"

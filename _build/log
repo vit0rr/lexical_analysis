@@ -1,0 +1,152 @@
+# dune fmt
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: /Users/vitorsouza/Desktop/dev/ocaml
+# Auto-detected concurrency: 8
+$ /Users/vitorsouza/.opam/default/bin/ocamlc.opt -config > /var/folders/f1/dldyzfv51q33x971mbls6trr0000gn/T/dune_0f04d5_output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; ocaml_bin = External "/Users/vitorsouza/.opam/default/bin"
+#  ; ocaml = Ok External "/Users/vitorsouza/.opam/default/bin/ocaml"
+#  ; ocamlc = External "/Users/vitorsouza/.opam/default/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/Users/vitorsouza/.opam/default/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/Users/vitorsouza/.opam/default/bin/ocamldep.opt"
+#  ; ocamlmklib =
+#      Ok External "/Users/vitorsouza/.opam/default/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" :
+#            "/Users/vitorsouza/.opam/default/lib/ocaml:/Users/vitorsouza/.opam/default/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/Users/vitorsouza/.opam/default/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" : "/Users/vitorsouza/Desktop/dev/ocaml"
+#        ; "INSIDE_DUNE" : "/Users/vitorsouza/Desktop/dev/ocaml/_build/default"
+#        ; "MANPATH" :
+#            "/Users/vitorsouza/Desktop/dev/ocaml/_build/install/default/man"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/Users/vitorsouza/Desktop/dev/ocaml/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/Users/vitorsouza/Desktop/dev/ocaml/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/Users/vitorsouza/Desktop/dev/ocaml/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_paths =
+#      [ External "/Users/vitorsouza/.opam/default/lib/ocaml"
+#      ; External "/Users/vitorsouza/.opam/default/lib"
+#      ]
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "5.0.0"
+#      ; standard_library_default = "/Users/vitorsouza/.opam/default/lib/ocaml"
+#      ; standard_library = "/Users/vitorsouza/.opam/default/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "cc"
+#      ; ocamlc_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
+#      ; ocamlopt_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
+#      ; bytecomp_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ]
+#      ; native_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_pack_linker = [ "ld"; "-r"; "-o" ]
+#      ; cc_profile = []
+#      ; architecture = "arm64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "macosx"
+#      ; asm = [ "cc"; "-c"; "-Wno-trigraphs" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "aarch64-apple-darwin24.1.0"
+#      ; target = "aarch64-apple-darwin24.1.0"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X032"
+#      ; cmi_magic_number = "Caml1999I032"
+#      ; cmo_magic_number = "Caml1999O032"
+#      ; cma_magic_number = "Caml1999A032"
+#      ; cmx_magic_number = "Caml1999Y032"
+#      ; cmxa_magic_number = "Caml1999Z032"
+#      ; ast_impl_magic_number = "Caml1999M032"
+#      ; ast_intf_magic_number = "Caml1999N032"
+#      ; cmxs_magic_number = "Caml1999D032"
+#      ; cmt_magic_number = "Caml1999T032"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ /usr/bin/git --no-pager diff --no-index --color=always -u _build/default/test/dune _build/default/test/.formatted/dune
+> diff --git a/_build/default/test/dune b/_build/default/test/.formatted/dune
+> index ffb3509..08ba2ff 100644
+> --- a/_build/default/test/dune
+> +++ b/_build/default/test/.formatted/dune
+> @@ -1,4 +1,3 @@
+>  (test
+>   (name test)
+> - (libraries alcotest monkey fmt)
+> - )
+> + (libraries alcotest monkey fmt))
+[1]
+$ (cd _build/default && /Users/vitorsouza/.opam/default/bin/ocamlformat --impl test/test.ml) > _build/default/test/.formatted/test.ml
+> File "test/test.ml", line 1:
+> Warning: Ocamlformat disabled because [--enable-outside-detected-project] is not set and no [.ocamlformat] was found within the project (root: ../../../ocaml)
+$ /usr/bin/git --no-pager diff --no-index --color=always -u _build/default/bin/dune _build/default/bin/.formatted/dune
+> diff --git a/_build/default/bin/dune b/_build/default/bin/.formatted/dune
+> index 748c03d..ce4eedd 100644
+> --- a/_build/default/bin/dune
+> +++ b/_build/default/bin/.formatted/dune
+> @@ -1,4 +1,3 @@
+>  (library
+>   (public_name monkey)
+> -  (libraries fmt)
+> -)
+> \ No newline at end of file
+> + (libraries fmt))
+[1]
+$ (cd _build/default && /Users/vitorsouza/.opam/default/bin/ocamlformat --impl bin/token.ml) > _build/default/bin/.formatted/token.ml
+> File "bin/token.ml", line 1:
+> Warning: Ocamlformat disabled because [--enable-outside-detected-project] is not set and no [.ocamlformat] was found within the project (root: ../../../ocaml)
+$ (cd _build/default && /Users/vitorsouza/.opam/default/bin/ocamlformat --impl bin/monkey.ml) > _build/default/bin/.formatted/monkey.ml
+> File "bin/monkey.ml", line 1:
+> Warning: Ocamlformat disabled because [--enable-outside-detected-project] is not set and no [.ocamlformat] was found within the project (root: ../../../ocaml)
+$ (cd _build/default && /Users/vitorsouza/.opam/default/bin/ocamlformat --impl bin/lexer.ml) > _build/default/bin/.formatted/lexer.ml
+> File "bin/lexer.ml", line 1:
+> Warning: Ocamlformat disabled because [--enable-outside-detected-project] is not set and no [.ocamlformat] was found within the project (root: ../../../ocaml)

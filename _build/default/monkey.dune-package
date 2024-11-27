@@ -1,0 +1,60 @@
+(lang dune 3.9)
+(name monkey)
+(sections (lib .) (libexec .))
+(files
+ (lib
+  (META
+   dune-package
+   lexer.ml
+   monkey.a
+   monkey.cma
+   monkey.cmi
+   monkey.cmt
+   monkey.cmx
+   monkey.cmxa
+   monkey.ml
+   monkey__.cmi
+   monkey__.cmt
+   monkey__.cmx
+   monkey__.ml
+   monkey__Lexer.cmi
+   monkey__Lexer.cmt
+   monkey__Lexer.cmx
+   monkey__Token.cmi
+   monkey__Token.cmt
+   monkey__Token.cmx
+   opam
+   token.ml))
+ (libexec (monkey.cmxs)))
+(library
+ (name monkey)
+ (kind normal)
+ (archives (byte monkey.cma) (native monkey.cmxa))
+ (plugins (byte monkey.cma) (native monkey.cmxs))
+ (native_archives monkey.a)
+ (requires fmt)
+ (main_module_name Monkey)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name monkey__)
+     (visibility public)
+     (kind alias)
+     (source (path Monkey__) (impl (path monkey__.ml-gen))))
+    (name Monkey)
+    (modules
+     (module
+      (obj_name monkey__Lexer)
+      (visibility public)
+      (source (path Lexer) (impl (path lexer.ml))))
+     (module
+      (obj_name monkey)
+      (visibility public)
+      (source (path Monkey) (impl (path monkey.ml))))
+     (module
+      (obj_name monkey__Token)
+      (visibility public)
+      (source (path Token) (impl (path token.ml))))))
+   (wrapped true))))

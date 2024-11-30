@@ -6,6 +6,7 @@ type t =
 (* Identifiers and literals *)
 | IDENT of string
 | INT of string
+| STRING of string
 (* Operators *)
 | ASSIGN
 | PLUS

@@ -3,6 +3,7 @@ type t =
   | EOF
   | IDENT of string
   | INT of string
+  | STRING of string
   | ASSIGN
   | PLUS
   | MINUS
@@ -43,6 +44,7 @@ let token_to_string = function
   | EOF -> "EOF"
   | IDENT a -> "IDENT " ^ a
   | INT a -> "INT " ^ a
+  | STRING a -> "STRING " ^ a
   | ASSIGN -> "ASSIGN"
   | PLUS -> "PLUS"
   | COMMA -> "COMMA"

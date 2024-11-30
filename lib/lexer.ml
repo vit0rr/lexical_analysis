@@ -40,6 +40,17 @@ let read_type fn lexer =
 let read_identifier = read_type is_letter
 let read_number = read_type is_digit
 
+let read_string lexer =
+  let position = lexer.position + 1 in
+  let rec read lex =
+    if lex.ch = '"' then lex
+    else if lex.ch = null_byte then lex
+    else lex |> read_char |> read
+  in
+  let updated_lex = read (read_char lexer) in
+  ( read_char updated_lex,
+    String.sub lexer.input position (updated_lex.position - position) )
+
 let rec next_char lexer =
   let skip l = l |> read_char |> next_char in
   let double_read l = l |> read_char |> read_char in
@@ -48,6 +59,9 @@ let rec next_char lexer =
       if peek_char lexer = '=' then (double_read lexer, Token.EQ)
       else (read_char lexer, Token.ASSIGN)
   | ';' -> (read_char lexer, Token.SEMICOLON)
+  | '"' ->
+      let new_lex, tok_literal = read_string lexer in
+      (new_lex, Token.STRING tok_literal)
   | '(' -> (read_char lexer, Token.LPAREN)
   | ')' -> (read_char lexer, Token.RPAREN)
   | ',' -> (read_char lexer, Token.COMMA)

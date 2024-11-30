@@ -1,2 +1,4 @@
 (library
- (name hello))
+ (name monkey_lib)
+ (public_name monkey)
+ (libraries fmt))

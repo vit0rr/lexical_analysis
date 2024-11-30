@@ -1,3 +1,4 @@
-(library
+(executable
+ (name monkey)
  (public_name monkey)
- (libraries fmt))
+ (libraries monkey_lib fmt))
